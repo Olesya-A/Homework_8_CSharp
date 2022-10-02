@@ -57,12 +57,12 @@ void SortedInDescendingOrder2DArray(int[,] numbers)
     {
         for (int j = 0; j < numbers.GetLength(1); j++)
         {
-            for (int k = 0; k < numbers.GetLength(1) - 1; k++)
+            for (int k = 0; k < numbers.GetLength(1)-1; k++)
             {
-                int max = numbers[j, k];
-                if (numbers[j, k + 1] > numbers[j, k])
+                int max = numbers[i, k];
+                if (numbers[i, k + 1] > numbers[i, k])
                 {
-                    Swap(ref numbers[j, k + 1], ref numbers[j, k]);
+                    Swap(ref numbers[i, k + 1], ref numbers[i, k]);
                 }
             }
         }
