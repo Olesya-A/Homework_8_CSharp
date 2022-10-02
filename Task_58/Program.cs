@@ -84,8 +84,7 @@ int[,] MatrixMultiplication(int[,] matrix1, int[,] matrix2)
             matrixProduct[i, j] = 0;
             for (int k = 0; k < matrix1.GetLength(1); k++)
             {
-                int product = matrix1[i, k] * matrix2[k, j];
-                matrixProduct[i, j] += product;
+                matrixProduct[i, j] += matrix1[i, k] * matrix2[k, j];
             }
         }
     }
