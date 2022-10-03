@@ -21,12 +21,16 @@ Print3DArrayWithIndex(numbers);
 int[] CreateArray(int[,,] array)
 {
     int[] arrayNoRep = new int[array.GetLength(0) * array.GetLength(1) * array.GetLength(2)];
+    if (arrayNoRep.Length > 90)
+    {
+        throw new Exception("Нет такого количества двузначных чисел.");
+    }
     for (int i = 0; i < arrayNoRep.Length; i++)
     {
         arrayNoRep[i] = new Random().Next(10, 100);
         for (int j = 0; j < i; j++)
         {
-            if(arrayNoRep[i]==arrayNoRep[j])i--;
+            if (arrayNoRep[i] == arrayNoRep[j]) i--;
         }
     }
     return arrayNoRep;
@@ -41,7 +45,7 @@ void PrintArray(int[] array)
 
 void Fill3DArray(int[,,] numbers, int[] array)
 {
-    int index =0;
+    int index = 0;
     for (int i = 0; i < numbers.GetLength(0); i++)
     {
         for (int j = 0; j < numbers.GetLength(1); j++)
